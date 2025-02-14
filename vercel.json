@@ -2,17 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/index.js",
-      "use": "@vercel/node",
-      "env": {
-        "NODE_OPTIONS": "--require module-alias/register"
-      }
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "buildCommand": "npm run build"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/index.js"
+      "dest": "/dist/index.js"
     }
   ]
 }
