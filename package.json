@@ -2,19 +2,18 @@
   "name": "dicki-prasetya",
   "version": "1.0.0",
   "description": "",
+  "main": "dist/index.js",
   "_moduleAliases": {
     "@controller": "dist/controller",
     "@middlewares": "dist/middlewares",
     "@routes": "dist/routes",
     "@libs": "dist/libs",
-    "@models": "dist/models",
     "@utils": "dist/utils"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
     "test": "jest --coverage",
     "build": "tsc",
-    "start": "node -r module-alias/register dist/index.js",
+    "start": "node -r tsconfig-paths/register dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,md,mjs}'",
@@ -50,7 +49,7 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "winston": "^3.14.2",
-    "zod": "^3.24.2"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
