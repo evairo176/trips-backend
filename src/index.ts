@@ -24,7 +24,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const allowedOrigins = [
-        'https://dev.kabarbengkel.com',
+        process.env.BASE_URL_FRONTEND,
         'http://localhost:3000',
       ];
       if (!origin || allowedOrigins.includes(origin)) {
@@ -56,7 +56,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: process.env.BASE_URL,
         description: 'Local server',
       },
     ],
