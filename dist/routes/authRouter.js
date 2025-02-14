@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const form_validate_1 = require("@libs/form-validate");
-const form_schema_1 = require("@libs/form-schema");
+const form_validate_1 = require("../libs/form-validate");
+const form_schema_1 = require("../libs/form-schema");
 const authController_1 = require("@controller/authController");
 const router = (0, express_1.Router)();
 /**

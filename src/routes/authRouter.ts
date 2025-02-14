@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { validate } from '@libs/form-validate';
-import { loginSchema, registerSchema } from '@libs/form-schema';
+import { validate } from '../libs/form-validate';
+import { loginSchema, registerSchema } from '../libs/form-schema';
 import {
   loginController,
   logoutController,
