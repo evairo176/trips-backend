@@ -11,7 +11,8 @@
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,md,mjs}'",
     "prepare": "husky",
-    "add-build": "git add dist"
+    "add-build": "git add dist",
+    "postinstall": "npx prisma generate"
   },
   "pre-commit": [
     "build",
