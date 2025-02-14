@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.server = exports.app = void 0;
 const express_1 = __importDefault(require("express"));
+require("module-alias/register");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const helmet_1 = __importDefault(require("helmet"));
