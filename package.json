@@ -13,7 +13,7 @@
     "prebuild": "rimraf dist",
     "test": "jest --coverage",
     "build": "tsc",
-    "start": "node -r module-alias/register -r tsconfig-paths/register dist/index.js",
+    "start": "node -r module-alias/register dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,md,mjs}'",
