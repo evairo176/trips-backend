@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "_moduleAliases": {
-    "@controller": "./dist/controller",
-    "@middlewares": "./dist/middlewares",
-    "@routes": "./dist/routes",
-    "@libs": "./dist/libs",
-    "@models": "./dist/models",
-    "@utils": "./dist/utils"
+    "@controller": "dist/controller",
+    "@middlewares": "dist/middlewares",
+    "@routes": "dist/routes",
+    "@libs": "dist/libs",
+    "@models": "dist/models",
+    "@utils": "dist/utils"
   },
   "scripts": {
     "prebuild": "rimraf dist",
