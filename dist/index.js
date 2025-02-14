@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.server = exports.app = void 0;
+require("module-alias/register");
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
@@ -13,7 +14,6 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // Import routes
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-require("module-alias/register");
 const authRouter_1 = __importDefault(require("@routes/authRouter"));
 const tripsRouter_1 = __importDefault(require("@routes/tripsRouter"));
 const notFoundMiddleware_1 = require("@middlewares/notFoundMiddleware");
