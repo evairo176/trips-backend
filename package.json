@@ -4,11 +4,11 @@
   "description": "",
   "main": "dist/index.js",
   "_moduleAliases": {
-    "@controller": "dist/controller",
+    "@controller": "./dist/controller",
     "@middlewares": "./dist/middlewares",
-    "@routes": "dist/routes",
-    "@libs": "dist/libs",
-    "@utils": "dist/utils"
+    "@routes": "./dist/routes",
+    "@libs": "./dist/libs",
+    "@utils": "./dist/utils"
   },
   "scripts": {
     "prebuild": "rimraf dist",
