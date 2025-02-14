@@ -42,6 +42,9 @@ app.use(
 // Use Morgan middleware for logging requests
 app.use(morganMiddleware);
 // Use routes
+app.get('/', (req, res) => {
+  res.status(200).send('Hello, TypeScript with Express!');
+});
 app.use('/api/auth', authRouter);
 app.use('/api/trips', tripsRouter);
 
