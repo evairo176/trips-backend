@@ -1,5 +1,4 @@
 import express from 'express';
-import 'module-alias/register';
 import dotenv from 'dotenv';
 dotenv.config();
 import helmet from 'helmet';
