@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.server = exports.app = void 0;
+exports.server = void 0;
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
@@ -16,7 +16,6 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const middlewares_1 = require("./middlewares");
 const routes_1 = require("./routes");
 const app = (0, express_1.default)();
-exports.app = app;
 const port = process.env.PORT || 3000;
 // Add JSON middleware to parse incoming requests
 app.use(express_1.default.json());
@@ -79,3 +78,4 @@ const server = app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 exports.server = server;
+exports.default = app; // Tambahkan ini agar Vercel bisa menangkap aplikasi

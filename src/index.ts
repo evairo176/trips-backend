@@ -82,5 +82,5 @@ const server = app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// Export both the app and the server for testing later
-export { app, server };
+export { server };
+export default app; // Tambahkan ini agar Vercel bisa menangkap aplikasi
