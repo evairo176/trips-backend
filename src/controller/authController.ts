@@ -1,9 +1,9 @@
-import { db } from '@libs/database';
 import { Response, Request } from 'express';
 import bcrypt from 'bcryptjs';
-import Logger from '@libs/logger';
-import { generateAccessToken, generateRefreshToken } from '@utils/jwt';
 import jwt from 'jsonwebtoken';
+import Logger from '../libs/logger';
+import { db } from '../libs/database';
+import { generateAccessToken, generateRefreshToken } from '../utils/jwt';
 
 const REFRESH_SECRET = process.env.REFRESH_SECRET || 'refreshsecret';
 //----------------------------------------------
@@ -13,7 +13,8 @@ export const registerController = async (req: Request, res: Response) => {
   const body = req.body;
 
   try {
-    const result = await db.$transaction(async (tx) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const result = await db.$transaction(async (tx: any) => {
       // Cek apakah email sudah terdaftar
       const existingUser = await tx.user.findUnique({
         where: { email: body?.email },

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const morgan_1 = __importDefault(require("morgan"));
-const logger_1 = __importDefault(require("@libs/logger"));
+const logger_1 = __importDefault(require("../../libs/logger"));
 // Override the stream method by telling
 // Morgan to use our custom logger instead of the console.log.
 const stream = {

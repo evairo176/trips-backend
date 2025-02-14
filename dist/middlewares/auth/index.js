@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.authenticateJWT = void 0;
-const logger_1 = __importDefault(require("@libs/logger"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const logger_1 = __importDefault(require("../../libs/logger"));
 const ACCESS_SECRET = process.env.ACCESS_SECRET || 'supersecret';
 const authenticateJWT = (req, res, next) => {
     var _a, _b, _c;

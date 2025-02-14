@@ -13,10 +13,8 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // Import routes
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const authRouter_1 = __importDefault(require("@routes/authRouter"));
-const tripsRouter_1 = __importDefault(require("@routes/tripsRouter"));
-const notFoundMiddleware_1 = require("@middlewares/notFoundMiddleware");
-const morganMiddleware_1 = __importDefault(require("@middlewares/morganMiddleware"));
+const middlewares_1 = require("./middlewares");
+const routes_1 = require("./routes");
 const app = (0, express_1.default)();
 exports.app = app;
 const port = process.env.PORT || 3000;
@@ -43,13 +41,13 @@ app.use((0, cors_1.default)({
     credentials: true,
 }));
 // Use Morgan middleware for logging requests
-app.use(morganMiddleware_1.default);
+app.use(middlewares_1.morganMiddleware);
 // Use routes
 app.get('/', (req, res) => {
     res.status(200).send('Hello, TypeScript with Express!');
 });
-app.use('/api/auth', authRouter_1.default);
-app.use('/api/trips', tripsRouter_1.default);
+app.use('/api/auth', routes_1.authRouter);
+app.use('/api/trips', routes_1.tripsRouter);
 // Swagger configuration options
 const swaggerOptions = {
     swaggerDefinition: {
@@ -75,7 +73,7 @@ const swaggerDocs = (0, swagger_jsdoc_1.default)(swaggerOptions);
 // seedBusinessTypes();
 // seedCompanyWithUser();
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocs));
-app.use(notFoundMiddleware_1.notFound);
+app.use(middlewares_1.notFound);
 // Start the server and export the server instance
 const server = app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

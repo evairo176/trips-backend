@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
-import Logger from '@libs/logger';
 import jwt from 'jsonwebtoken';
+import Logger from '../../libs/logger';
 const ACCESS_SECRET = process.env.ACCESS_SECRET || 'supersecret';
 
 export const authenticateJWT = (

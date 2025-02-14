@@ -13,11 +13,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logoutController = exports.refreshTokenController = exports.loginController = exports.registerController = void 0;
-const database_1 = require("@libs/database");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
-const logger_1 = __importDefault(require("@libs/logger"));
-const jwt_1 = require("@utils/jwt");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const logger_1 = __importDefault(require("../libs/logger"));
+const database_1 = require("../libs/database");
+const jwt_1 = require("../utils/jwt");
 const REFRESH_SECRET = process.env.REFRESH_SECRET || 'refreshsecret';
 //----------------------------------------------
 // register controller
@@ -25,6 +25,7 @@ const REFRESH_SECRET = process.env.REFRESH_SECRET || 'refreshsecret';
 const registerController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = req.body;
     try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const result = yield database_1.db.$transaction((tx) => __awaiter(void 0, void 0, void 0, function* () {
             // Cek apakah email sudah terdaftar
             const existingUser = yield tx.user.findUnique({

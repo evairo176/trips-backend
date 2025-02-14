@@ -7,12 +7,8 @@ import cookieParser from 'cookie-parser';
 // Import routes
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-
-import authRouter from '@routes/authRouter';
-import tripsRouter from '@routes/tripsRouter';
-
-import { notFound } from '@middlewares/notFoundMiddleware';
-import morganMiddleware from '@middlewares/morganMiddleware';
+import { morganMiddleware, notFound } from './middlewares';
+import { authRouter, tripsRouter } from './routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
