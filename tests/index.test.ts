@@ -1,4 +1,4 @@
-import { app, server } from '../src/index';
+import app, { server } from '../src/index';
 const request = require('supertest'); // Require import to prevent type error with supertest
 
 describe('GET /', () => {
