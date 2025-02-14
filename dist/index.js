@@ -13,6 +13,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 // Import routes
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+require("module-alias/register");
 const morganMiddleware_1 = __importDefault(require("@middlewares/morganMiddleware"));
 const authRouter_1 = __importDefault(require("@routes/authRouter"));
 const tripsRouter_1 = __importDefault(require("@routes/tripsRouter"));

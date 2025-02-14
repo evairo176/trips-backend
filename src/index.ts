@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 // Import routes
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import 'module-alias/register';
 import morganMiddleware from '@middlewares/morganMiddleware';
 import authRouter from '@routes/authRouter';
 import tripsRouter from '@routes/tripsRouter';
