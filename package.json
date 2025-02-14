@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "_moduleAliases": {
     "@controller": "dist/controller",
-    "@middlewares": "dist/middlewares",
+    "@middlewares": "./dist/middlewares",
     "@routes": "dist/routes",
     "@libs": "dist/libs",
     "@utils": "dist/utils"
